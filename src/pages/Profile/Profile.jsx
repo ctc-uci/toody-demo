@@ -3,6 +3,12 @@ import PropTypes from 'prop-types';
 import person from '../../images/person.png';
 import './Profile.css';
 
+const stats = [
+  { number: '50', description: 'Total Tasks' },
+  { number: '80%', description: 'Tasks Complete' },
+  { number: '5', description: 'Journal Entries' },
+];
+
 const Profile = ({ firstName, lastName }) => {
   const Stat = (number, desc) => {
     return (
@@ -21,11 +27,7 @@ const Profile = ({ firstName, lastName }) => {
         </div>
         <div className="profile-info">
           <h1>{firstName + ' ' + lastName}</h1>
-          <div className="all-stats">
-            {Stat('50', 'Total Tasks')}
-            {Stat('80%', 'Tasks Complete')}
-            {Stat('5', 'Journal Entries')}
-          </div>
+          <div className="all-stats">{stats.map(s => Stat(s.number, s.description))}</div>
         </div>
       </div>
     </div>
