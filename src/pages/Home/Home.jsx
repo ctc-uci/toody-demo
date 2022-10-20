@@ -10,6 +10,8 @@ const Home = ({ name }) => {
         <br />
         You&apos;ve been using Toody for 100 days!
       </div>
+      <div className="to-do">Today&apos;s To Do List</div>
+      <div className="journal-entries">Journal Entry</div>
     </div>
   );
 };
