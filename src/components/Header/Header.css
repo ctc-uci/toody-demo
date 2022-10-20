@@ -1,4 +1,9 @@
 .header {
+    position: fixed;
+    width: 100vw;
+}
+
+.navbar {
     display: flex;
     flex-direction: row;
     align-items: center;
