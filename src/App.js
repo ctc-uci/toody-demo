@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Home from './pages/Home/Home';
+import Profile from './pages/Profile/Profile';
 import './App.css';
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
         <div className="content-wrap">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/profile" />
+            <Route path="/profile" element={<Profile />} />
           </Routes>
         </div>
       </div>
