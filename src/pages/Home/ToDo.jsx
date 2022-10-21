@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import ListItem from '../../components/ListItem/ListItem';
 import { SlPlus } from 'react-icons/sl';
@@ -7,18 +7,17 @@ import './ToDo.css';
 // items = [{id, item, checked}, ...]
 const ToDo = ({ items }) => {
   const [newTask, setNewTask] = useState('');
-  //   const [change, setChange] = useState(false);
+  const [change, setChange] = useState(false);
 
   const addNewTask = e => {
-    console.log(newTask);
     e.preventDefault();
-    // setChange(!change);
-    // items.push({ id: '0', item: newTask });
+    setChange(!change);
+    items.push({ id: '0', item: newTask });
   };
 
-  //   useEffect(() => {
-  //     setNewTask('');
-  //   }, [change]);
+  useEffect(() => {
+    setNewTask('');
+  }, [change]);
 
   return (
     <div className="to-do-content">
@@ -37,7 +36,8 @@ const ToDo = ({ items }) => {
           className="add-task-input"
           type="text"
           placeholder="New Task"
-          onChange={setNewTask}
+          value={newTask}
+          onChange={e => setNewTask(e.target.value)}
         />
       </form>
     </div>
