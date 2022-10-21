@@ -12,18 +12,21 @@ const items = [
 
 const entries = [
   {
+    id: '1',
     date: '9/2/2022',
     entry:
       'Lorem Ipsum is simply dummy text of the printing and typesetting industry.\
       Lorem has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer ...',
   },
   {
+    id: '2',
     date: '9/15/2022',
     entry:
       'Lorem Ipsum is simply dummy text of the printing and typesetting industry.\
       Lorem has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer ...',
   },
   {
+    id: '3',
     date: '10/1/2022',
     entry:
       'Lorem Ipsum is simply dummy text of the printing and typesetting industry.\
