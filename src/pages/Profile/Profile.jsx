@@ -3,13 +3,7 @@ import PropTypes from 'prop-types';
 import person from '../../images/person.png';
 import './Profile.css';
 
-const stats = [
-  { number: '50', description: 'Total Tasks' },
-  { number: '80%', description: 'Tasks Complete' },
-  { number: '5', description: 'Journal Entries' },
-];
-
-const Profile = ({ firstName, lastName }) => {
+const Profile = ({ firstName, lastName, stats }) => {
   const Stat = (number, desc) => {
     return (
       <div className="stat">
@@ -35,13 +29,9 @@ const Profile = ({ firstName, lastName }) => {
 };
 
 Profile.propTypes = {
-  firstName: PropTypes.string,
-  lastName: PropTypes.string,
-};
-
-Profile.defaultProps = {
-  firstName: 'Alex',
-  lastName: 'Wang',
+  firstName: PropTypes.string.isRequired,
+  lastName: PropTypes.string.isRequired,
+  stats: PropTypes.array.isRequired,
 };
 
 export default Profile;

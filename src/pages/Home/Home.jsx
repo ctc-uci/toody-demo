@@ -5,12 +5,14 @@ import JournalEntries from './JournalEntries';
 import { SlArrowDown } from 'react-icons/sl';
 import './Home.css';
 
+// hard coded to do list items
 const items = [
   { id: '1', item: 'Go to costco to get gas' },
   { id: '2', item: 'Pickup sister from the airport' },
   { id: '3', item: 'Buy groceries for the week' },
 ];
 
+// hard coded journal entries
 const entries = [
   {
     id: '1',
@@ -64,11 +66,7 @@ const Home = ({ name }) => {
 };
 
 Home.propTypes = {
-  name: PropTypes.string,
-};
-
-Home.defaultProps = {
-  name: 'Alex',
+  name: PropTypes.string.isRequired,
 };
 
 export default Home;

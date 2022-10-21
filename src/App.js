@@ -5,6 +5,15 @@ import Home from './pages/Home/Home';
 import Profile from './pages/Profile/Profile';
 import './App.css';
 
+// hard coded user
+const firstName = 'Jennifer';
+const lastName = 'Wong';
+const stats = [
+  { number: '50', description: 'Total Tasks' },
+  { number: '80%', description: 'Tasks Complete' },
+  { number: '5', description: 'Journal Entries' },
+];
+
 function App() {
   return (
     <Router>
@@ -12,8 +21,11 @@ function App() {
         <Header />
         <div className="content-wrap">
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/profile" element={<Profile />} />
+            <Route path="/" element={<Home name={firstName} />} />
+            <Route
+              path="/profile"
+              element={<Profile firstName={firstName} lastName={lastName} stats={stats} />}
+            />
           </Routes>
         </div>
       </div>
