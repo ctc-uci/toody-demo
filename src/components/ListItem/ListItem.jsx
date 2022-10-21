@@ -10,7 +10,7 @@ const ListItem = ({ id, item }) => {
 
   return (
     <div className="list-item">
-      <input type="checkbox" />
+      <input className="checkbox" type="checkbox" />
       <p>{item}</p>
       <Popover
         isOpen={open}
@@ -33,7 +33,7 @@ const ListItem = ({ id, item }) => {
           </ArrowContainer>
         )}
       >
-        <button type="button" onClick={() => setOpen(!open)}>
+        <button className="open-menu-button" type="button" onClick={() => setOpen(!open)}>
           <SlOptions style={{ color: '#FFFFFF' }} />
         </button>
       </Popover>

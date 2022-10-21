@@ -7,8 +7,9 @@
     margin: 8px 0;
 }
 
-.list-item input{
+.list-item .checkbox {
     margin-right: 10px;
+    transform: scale(1.5);
 }
 
 .list-item button {
@@ -19,6 +20,10 @@
 
 .list-item p {
     margin-block: 0;
+}
+
+.open-menu-button {
+    cursor: pointer;
 }
 
 .menu {
@@ -32,10 +37,11 @@
 .menu button {
     background-color: transparent;
     border: 0;
-    padding: 5px;
+    padding: 5px 10px;
     font-size: 16px;
+    cursor: pointer;
 }
 
-.menu:hover {
-    cursor: pointer;
+.menu button:hover {
+    background-color: rgba(0, 0, 0, .1)
 }
