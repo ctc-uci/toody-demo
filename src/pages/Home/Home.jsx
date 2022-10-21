@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ToDo from './ToDo';
 import JournalEntries from './JournalEntries';
+import { SlArrowDown } from 'react-icons/sl';
 import './Home.css';
 
 const items = [
@@ -41,8 +42,18 @@ const Home = ({ name }) => {
         Hello {name}! Welcome to Toody.
         <br />
         You&apos;ve been using Toody for 100 days!
+        <button
+          className="scroll-down"
+          onClick={e => {
+            let join = document.getElementById('to-do');
+            e.preventDefault();
+            join.scrollIntoView({ behavior: 'smooth' });
+          }}
+        >
+          <SlArrowDown style={{ fontSize: '52px', color: '#FFFFFF' }} />
+        </button>
       </div>
-      <div className="to-do">
+      <div className="to-do" id="to-do">
         <ToDo items={items} />
       </div>
       <div className="journal-entries">
