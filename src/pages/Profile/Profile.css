@@ -39,21 +39,3 @@
     display: flex;
     flex-direction: row;
 }
-
-.stat {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.stat + .stat {
-    margin-left: 48px;
-}
-
-.stat .stat-number {
-    font-size: 64px;
-}
-
-.stat .stat-desc {
-    font-size: 36px;
-}

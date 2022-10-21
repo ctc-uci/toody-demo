@@ -1,18 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import person from '../../images/person.png';
+import Stat from '../../components/Stat/Stat';
 import './Profile.css';
 
 const Profile = ({ firstName, lastName, stats }) => {
-  const Stat = (number, desc) => {
-    return (
-      <div className="stat">
-        <div className="stat-number">{number}</div>
-        <div className="stat-desc">{desc}</div>
-      </div>
-    );
-  };
-
   return (
     <div className="profile-page">
       <div className="profile-page-content">
@@ -21,7 +13,12 @@ const Profile = ({ firstName, lastName, stats }) => {
         </div>
         <div className="profile-info">
           <h1>{firstName + ' ' + lastName}</h1>
-          <div className="all-stats">{stats.map(s => Stat(s.number, s.description))}</div>
+          <div className="all-stats">
+            {stats.map(s => (
+              // eslint-disable-next-line react/jsx-key
+              <Stat number={s.number} description={s.description} />
+            ))}
+          </div>
         </div>
       </div>
     </div>
