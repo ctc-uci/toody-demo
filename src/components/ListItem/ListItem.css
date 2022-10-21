@@ -1,0 +1,41 @@
+.list-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: inherit;
+    font-size: 24px;
+    margin: 8px 0;
+}
+
+.list-item input{
+    margin-right: 10px;
+}
+
+.list-item button {
+    background-color: transparent;
+    border: 0;
+    text-align: center;
+}
+
+.list-item p {
+    margin-block: 0;
+}
+
+.menu {
+    background-color: var(--beige);
+    height: fit-content;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.menu button {
+    background-color: transparent;
+    border: 0;
+    padding: 5px;
+    font-size: 16px;
+}
+
+.menu:hover {
+    cursor: pointer;
+}

@@ -1,0 +1,17 @@
+.to-do-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 30%;
+}
+
+.to-do-content h2 {
+    font-size: 36px;
+    margin-block: 4px;
+}
+
+.to-do-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
