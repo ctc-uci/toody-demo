@@ -1,9 +1,7 @@
 const mongoose = require('mongoose');
 
 const todoSchema = new mongoose.Schema({
-  name: String,
-  abbreviation: String,
-  headcount: Number,
+  text: String,
 });
 const Todo = mongoose.model('Todo', todoSchema);
 
