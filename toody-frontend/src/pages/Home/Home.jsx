@@ -1,43 +1,32 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
 import ToDo from './ToDo';
 import JournalEntries from './JournalEntries';
 import { SlArrowDown } from 'react-icons/sl';
 import './Home.css';
 
-// hard coded to do list items
-const items = [
-  { id: '1', item: 'Go to costco to get gas' },
-  { id: '2', item: 'Pickup sister from the airport' },
-  { id: '3', item: 'Buy groceries for the week' },
-];
-
-// hard coded journal entries
-const entries = [
-  {
-    id: '1',
-    date: '9/2/2022',
-    entry:
-      'Lorem Ipsum is simply dummy text of the printing and typesetting industry.\
-      Lorem has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer ...',
-  },
-  {
-    id: '2',
-    date: '9/15/2022',
-    entry:
-      'Lorem Ipsum is simply dummy text of the printing and typesetting industry.\
-      Lorem has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer ...',
-  },
-  {
-    id: '3',
-    date: '10/1/2022',
-    entry:
-      'Lorem Ipsum is simply dummy text of the printing and typesetting industry.\
-      Lorem has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer ...',
-  },
-];
-
 const Home = ({ name }) => {
+  const [ todos, setTodos ] = useState([]);
+  const [ notes, setNotes ] = useState([]);
+
+  const getTodos = async () => {
+    const todos = await axios.get('http://localhost:3001/todos');
+    setTodos(todos.data);
+    console.log(todos);
+  };
+
+  const getNotes = async () => {
+    const notes = await axios.get('http://localhost:3001/notes');
+    setNotes(notes.data);
+    console.log(notes);
+  };
+
+  useEffect(() => {
+    getTodos();
+    getNotes();
+  });
+
   return (
     <div className="home">
       <div className="landing">
@@ -56,10 +45,10 @@ const Home = ({ name }) => {
         </button>
       </div>
       <div className="to-do" id="to-do">
-        <ToDo items={items} />
+        <ToDo items={todos} />
       </div>
       <div className="journal-entries">
-        <JournalEntries entries={entries} />
+        <JournalEntries entries={notes} />
       </div>
     </div>
   );

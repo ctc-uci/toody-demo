@@ -9,12 +9,13 @@ const JournalEntries = ({ entries }) => {
   const addNewEntry = e => {
     e.preventDefault();
     setChange(!change);
-    entries.push({ id: '0', entry: newEntry, date: '10/23/2022' });
+    entries.push({ id: '0', entry: newEntry, date: '10/30/2022' });
   };
 
   useEffect(() => {
+    console.log('journal entry called with', entries);
     setNewEntry('');
-  }, [change]);
+  }, []);
 
   return (
     <div className="journal-content">
@@ -31,7 +32,7 @@ const JournalEntries = ({ entries }) => {
       </form>
       <div className="journal">
         {entries.map(e => (
-          <Entry key={e.id} id={e.id} date={e.date} entry={e.entry} />
+          <Entry key={e.toString()} date={e.date} entry={e.text} />
         ))}
       </div>
     </div>
