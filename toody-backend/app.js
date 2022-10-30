@@ -5,8 +5,6 @@ require('dotenv').config();
 const Todo = require('./models/todo.model');
 const Note = require('./models/note.model');
 
-mongoose.set('debug', true);
-
 mongoose.connect(process.env.MONGO_URI, () => {
   console.log('connected to mongo');
 })

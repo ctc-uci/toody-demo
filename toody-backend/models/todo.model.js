@@ -5,6 +5,6 @@ const todoSchema = new mongoose.Schema({
   abbreviation: String,
   headcount: Number,
 });
-const Team = mongoose.model('Todo', todoSchema);
+const Todo = mongoose.model('Todo', todoSchema);
 
-module.exports = Team;
+module.exports = Todo;

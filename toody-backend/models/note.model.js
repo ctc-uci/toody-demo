@@ -1,9 +1,8 @@
 const mongoose = require('mongoose');
 
 const noteSchema = new mongoose.Schema({
-  name: String,
-  abbreviation: String,
-  headcount: Number,
+  date: String,
+  text: String,
 });
 const Note = mongoose.model('Note', noteSchema);
 
